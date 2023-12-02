@@ -1,0 +1,269 @@
+{
+    "programas": [
+        {
+            "id": 1,
+            "nombre": "ADMINISTRACION DE EMPRESAS"
+        },
+        {
+            "id": 2,
+            "nombre": "ADMINISTRACION INDUSTRIAL"
+        },
+        {
+            "id": 3,
+            "nombre": "BIOLOGIA"
+        },
+        {
+            "id": 4,
+            "nombre": "COMUNICACION SOCIAL"
+        },
+        {
+            "id": 5,
+            "nombre": "CONTADURIA PUBLICA"
+        },
+        {
+            "id": 6,
+            "nombre": "DERECHO"
+        },
+        {
+            "id": 7,
+            "nombre": "ECONOMIA"
+        },
+        {
+            "id": 8,
+            "nombre": "ENFERMERIA"
+        },
+        {
+            "id": 9,
+            "nombre": "FILOSOFIA"
+        },
+        {
+            "id": 10,
+            "nombre": "HISTORIA"
+        },
+        {
+            "id": 11,
+            "nombre": "INGENIERIA CIVIL"
+        },
+        {
+            "id": 12,
+            "nombre": "INGENIERIA DE SISTEMAS"
+        },
+        {
+            "id": 13,
+            "nombre": "INGENIERIA QUIMICA"
+        },
+        {
+            "id": 14,
+            "nombre": "INGENIERIA DE ALIMENTOS"
+        },
+        {
+            "id": 15,
+            "nombre": "CIENCIAS SOCIALES"
+        },
+        {
+            "id": 16,
+            "nombre": "EDUCACION INFANTIL"
+        },
+        {
+            "id": 17,
+            "nombre": "LITERATURA"
+        },
+        {
+            "id": 18,
+            "nombre": "MATEMATICAS"
+        },
+        {
+            "id": 19,
+            "nombre": "ODONTOLOGIA"
+        },
+        {
+            "id": 20,
+            "nombre": "IDIOMAS"
+        },
+        {
+            "id": 21,
+            "nombre": "QUIMICA"
+        },
+        {
+            "id": 22,
+            "nombre": "QUIMICA FARMACEUTICA"
+        },
+        {
+            "id": 23,
+            "nombre": "TRABAJO SOCIAL"
+        },
+        {
+            "id": 24,
+            "nombre": "MARKETING"
+        },
+        {
+            "id": 25,
+            "nombre": "CIENCIA DE DATOS"
+        },
+        {
+            "id": 26,
+            "nombre": "PSICOLOGIA"
+        },
+        {
+            "id": 27,
+            "nombre": "CIENCIAS POLITICAS"
+        },
+        {
+            "id": 28,
+            "nombre": "NEGOCIOS INTERNACIONALES"
+        },
+        {
+            "id": 29,
+            "nombre": "INGENIERIA NAVAL"
+        },
+        {
+            "id": 30,
+            "nombre": "INGENIERIA MECATRONICA"
+        },
+        {
+            "id": 31,
+            "nombre": "INGENIERIA MECANICA"
+        },
+        {
+            "id": 32,
+            "nombre": "INGENIERIA INDUSTRIAL"
+        },
+        {
+            "id": 33,
+            "nombre": "INGENIERIA ELECTRONICA"
+        },
+        {
+            "id": 34,
+            "nombre": "INGENIERIA ELECTRICA"
+        },
+        {
+            "id": 35,
+            "nombre": "INGENIERIA BIOMEDICA"
+        },
+        {
+            "id": 36,
+            "nombre": "INGENIERIA AMBIENTAL"
+        },
+        {
+            "id": 37,
+            "nombre": "ARQUITECTURA"
+        },
+        {
+            "id": 38,
+            "nombre": "INGENIERIA DE PROCESO"
+        },
+        {
+            "id": 39,
+            "nombre": "TURISMO"
+        },
+        {
+            "id": 40,
+            "nombre": "ANTROPOLOGIA"
+        },
+        {
+            "id": 41,
+            "nombre": "ARTES PLASTICAS"
+        },
+        {
+            "id": 42,
+            "nombre": "CIENCIAS DE LA COMPUTACION"
+        },
+        {
+            "id": 43,
+            "nombre": "CINE Y TELEVISION"
+        },
+        {
+            "id": 44,
+            "nombre": "DISEÑO GRAFICO"
+        },
+        {
+            "id": 45,
+            "nombre": "DISEÑO INDUSTRIAL"
+        },
+        {
+            "id": 46,
+            "nombre": "FILOLOGIA"
+        },
+        {
+            "id": 47,
+            "nombre": "ESTADISTICAS"
+        },
+        {
+            "id": 48,
+            "nombre": "FISICA"
+        },
+        {
+            "id": 49,
+            "nombre": "FONOAUDIOLOGIA"
+        },
+        {
+            "id": 50,
+            "nombre": "GEOGRAFIA"
+        },
+        {
+            "id": 51,
+            "nombre": "INGENIERIA AGRICOLA"
+        },
+        {
+            "id": 52,
+            "nombre": "INGENIERIA AGRONOMICA"
+        },
+        {
+            "id": 53,
+            "nombre": "MEDICINA VETERINARIA"
+        },
+        {
+            "id": 54,
+            "nombre": "MUSICA"
+        },
+        {
+            "id": 55,
+            "nombre": "NUTRICION"
+        },
+        {
+            "id": 56,
+            "nombre": "SOCIOLOGIA"
+        },
+        {
+            "id": 57,
+            "nombre": "ZOOTECNIA"
+        },
+        {
+            "id": 58,
+            "nombre": "INGENIERIA BIOLOGICA"
+        },
+        {
+            "id": 59,
+            "nombre": "CONSTRUCCION"
+        },
+        {
+            "id": 60,
+            "nombre": "INGENIERIA ADMINISTRATIVA"
+        },
+        {
+            "id": 61,
+            "nombre": "INGENIERIA DE CONTROL"
+        },
+        {
+            "id": 62,
+            "nombre": "INGENIERIA DE MINAS"
+        },
+        {
+            "id": 63,
+            "nombre": "INGENIERIA DE PETROLEOS"
+        },
+        {
+            "id": 64,
+            "nombre": "INGENIERIA FISICA"
+        },
+        {
+            "id": 65,
+            "nombre": "INGENIERIA FORESTAL"
+        },
+        {
+            "id": 66,
+            "nombre": "INGENIERIA GEOLOGICA"
+        }
+    ]
+    
+}

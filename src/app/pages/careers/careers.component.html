@@ -1,0 +1,17 @@
+<main>
+    <h1>Carreras</h1>
+    <div class="search-content">
+        <input class="search" type="search" [formControl]="searchControl"> 
+        <select class="select-menu">
+            <option value="1">Programa</option>
+            <option value="2">Area</option>
+        </select>
+    </div> 
+    <div class="careers-items">
+        <app-career-item [page]="page" [filter]="filter" [search]="search" ></app-career-item>
+    </div>
+</main>  
+
+
+
+

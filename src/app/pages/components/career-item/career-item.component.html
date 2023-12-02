@@ -1,0 +1,15 @@
+<div *ngFor="let item of itemsToDisplay"> 
+    {{ item.id }} - {{ item.nombre }}
+</div>
+
+@if (page != 1) {
+    <button (click)="page=page-1">-</button>
+}
+<div>
+    <span>
+        {{page}} - {{calculatedPage}}
+    </span>
+</div>
+@if ((page)*limit_pages < data.length) {
+    <button (click)="page=page+1">+</button>
+}

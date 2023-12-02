@@ -1,0 +1,7 @@
+{
+   "servers": {
+        "voca-api": "http://localhost:3000",
+        "dogs-api": "https://dog.ceo/api/breeds/image/random",
+        "json-server": "http://localhost:3000"
+    }
+}
