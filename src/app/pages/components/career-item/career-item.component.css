@@ -166,3 +166,16 @@ section{
     column-gap: 20px;
     margin-top: 20px;
 }
+
+
+.results{
+
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    letter-spacing: 2px;
+    color: #d9d9d9a6;
+
+    font-size: 12px;
+    font-style: italic;
+}

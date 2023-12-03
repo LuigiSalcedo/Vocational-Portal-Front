@@ -10,16 +10,17 @@
             <img class="arrow" src="./assets/img/arrow.png" alt="" srcset="">
         </div>
     </div>
-    <div class="items-options">   
+    <div class="items-options">
+        
         <div class="careers-items">
-            <ng-container *ngIf="isSelecting">
+            <ng-container *ngIf="!isSelecting">
                 <div class="dot-content">
                     <div class="dot one"></div>
                     <div class="dot two"></div>
                     <div class="dot tree"></div>
                 </div>
             </ng-container>
-            <app-career-item [page]="page" [filter]="filter" [slider]="valorSlider" [search]="search" ></app-career-item>
+            <app-career-item (finishedLoadingEvent)="getFinished($event)" [page]="page" [filter]="filter" [slider]="valorSlider" [search]="search" ></app-career-item>
         </div>
         <div class="options" [ngClass]="{ 'show-options': selectedOption === '2' }">
             <div class="slider">

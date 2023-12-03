@@ -94,7 +94,7 @@ main h1 {
 .careers-items {
 
     width: 100%;
-
+    
     height: auto;
     box-sizing: border-box;
     margin-top: 5px;
@@ -113,6 +113,7 @@ main h1 {
     margin-bottom: 100px;
 
     position: relative;
+    min-height: 500px;
 
 }
 

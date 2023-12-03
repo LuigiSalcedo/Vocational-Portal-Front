@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Host } from '../../../../assets/api-config.model';
 import { CommonModule, NgFor } from '@angular/common';
 
@@ -50,6 +50,7 @@ export class CareerItemComponent {
         this.data = data;
         
         console.log(Host.host + '/programas')
+        this.finishedLoad(true);
         this.itemsToDisplay
 
       });
@@ -64,6 +65,7 @@ export class CareerItemComponent {
         this.data = data;
         
         console.log(Host.host + '/programas')
+        this.finishedLoad(true);
         this.itemsToDisplay
       });
 
@@ -88,6 +90,9 @@ export class CareerItemComponent {
           return acc;
         }, {});
         this.data = data;
+
+        this.finishedLoad(true);
+
         console.log(Host.host + "/programas/areas?precision=" + this.slider, this.filter)
         this.itemsToDisplay
       });
@@ -108,7 +113,8 @@ export class CareerItemComponent {
         }, {});
         this.data = data;
         
-        console.log(Host.host + '/programas')
+        console.log(Host.host + '/programas' + (this.search === '' ? '': "/nombre/" + this.search))
+        this.finishedLoad(true);
         this.itemsToDisplay
       });
       
@@ -124,8 +130,14 @@ export class CareerItemComponent {
 
   }
 
+  @Output() finishedLoadingEvent = new EventEmitter<boolean>();
+
   get calculatedPage(): number {
     return Math.round((this.data.length / this.limit_pages));
+  }
+
+  finishedLoad(finish: boolean){
+    this.finishedLoadingEvent.emit(finish);
   }
 
 }

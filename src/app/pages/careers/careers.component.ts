@@ -41,6 +41,7 @@ export class CareersComponent {
       .pipe(
         debounceTime(500)
       ).subscribe(query => {
+        this.isSelecting = false;
         this.search = !query ? '' : query;
       })
 
@@ -57,11 +58,10 @@ export class CareersComponent {
 
     // Observable para realizar la acción después de un tiempo de espera
     this.optionClickSubject.pipe(
-      debounceTime(1500),
+      debounceTime(1000),
     ).subscribe(query => {
 
       this.filter = query;
-      this.isSelecting = false;
       console.log('Variable actualizada después de hacer clic');
     });
 
@@ -84,7 +84,7 @@ export class CareersComponent {
       console.log("remove", number)
     }
 
-    this.isSelecting = true;
+    this.isSelecting = false;
     this.optionClickSubject.next(JSON.stringify(Array.from(this.ListAreas)));
   }
 
@@ -104,6 +104,10 @@ export class CareersComponent {
         this.search = '';
     }
 
+  }
+
+  getFinished(finish: boolean){
+    this.isSelecting = finish;
   }
 
 }
