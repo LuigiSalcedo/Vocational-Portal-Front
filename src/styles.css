@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap');
 
 :root{
     color-scheme: light dark;
@@ -12,4 +12,9 @@ body{
     box-sizing: border-box;
     background-color: #312E2E;  
     color: #FFF;
+
+    /* text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     font-smooth: always; */
 }

@@ -1,15 +1,36 @@
-<div *ngFor="let item of itemsToDisplay"> 
-    {{ item.id }} - {{ item.nombre }}
+
+<section>
+    <ng-container *ngFor="let item of itemsToDisplay"> 
+
+        <div class="card-item">
+            <div class="text-content">
+                <div class="text">
+                    <h2>{{ item.nombre | titlecase}}</h2>
+                    <div>
+                        <span>La ciencia detrás de la tecnología, diseñando soluciones para el mundo digitalAAAAAAAAAAAAAAAAAA.</span>
+                    </div>
+                </div>
+            </div>
+            <img class="text-image" src="./assets/img/careers/system-engineering.png" alt="" srcset="">
+            <div class="view-container">
+                <a class="view" href="">Ver</a>
+            </div>
+        </div>
+
+    </ng-container>
+</section>
+
+<div class="buttons-container">
+    @if (page != 1) {
+        <button (click)="page=page-1">-</button>
+    }
+    <div>
+        <span>
+            {{page}} - {{calculatedPage}}
+        </span>
+    </div>
+    @if ((page)*limit_pages < data.length) {
+        <button (click)="page=page+1">+</button>
+    }
 </div>
 
-@if (page != 1) {
-    <button (click)="page=page-1">-</button>
-}
-<div>
-    <span>
-        {{page}} - {{calculatedPage}}
-    </span>
-</div>
-@if ((page)*limit_pages < data.length) {
-    <button (click)="page=page+1">+</button>
-}

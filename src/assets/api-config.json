@@ -1,6 +1,6 @@
 {
    "servers": {
-        "voca-api": "http://localhost:3000",
+        "voca-api": "https://vocaportal-server.onrender.com",
         "dogs-api": "https://dog.ceo/api/breeds/image/random",
         "json-server": "http://localhost:3000"
     }
