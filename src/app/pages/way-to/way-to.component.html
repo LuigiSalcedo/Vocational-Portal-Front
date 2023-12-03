@@ -1,0 +1,53 @@
+<div id="screen"></div>
+
+<section class="choose">
+    <h1>Escoge tus Preferencias</h1>
+    <app-way-to-item (addSelectionEvent)="addSelection($event)" [elementos]="elementos"></app-way-to-item>
+</section>
+<main>
+    <section class="info">
+        <h1>Tus Elecciones</h1>
+        <div class="select-content">
+            <ng-container *ngFor="let item of items">
+                <span class="select">{{ item.nombre | titlecase}}</span>
+            </ng-container>
+        </div>
+    </section>
+    <section class="relacionado">
+        <h3>Te podria interesar:</h3>
+        <div class="card-content">
+            
+            @if (data.length == 0){
+                <span class="order">ordenado hacia la mayor preferencia</span>
+            }
+            <ng-container *ngFor="let item of itemsToDisplay"> 
+                <div class="card-item">
+                    <div class="text-content">
+                        <div class="text">
+                            <h2>{{ item.nombre | titlecase}}</h2>
+                            <div>
+                                <span>{{ item.descripcion }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        @if (calculatedPage != 0) {
+            <div class="buttons-container">
+                @if (page != 1) {
+                    <button (click)="page=page-1">-</button>
+                }
+                <div>
+                    <span>
+                        {{page}} - {{calculatedPage}}
+                    </span>
+                </div>
+                @if ((page)*limit_pages < data.length) {
+                    <button (click)="page=page+1">+</button>
+                }
+            </div>
+        }
+    </section>
+</main>

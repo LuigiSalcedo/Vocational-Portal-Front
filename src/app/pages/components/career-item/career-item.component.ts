@@ -44,7 +44,7 @@ export class CareerItemComponent {
       this.http.get<any[]>(Host.host + '/programas')
       .subscribe((data: any[]) =>{
         this.transformedData = data.reduce((acc, item) => {
-          acc[item.id] = { id: item.id, nombre: item.nombre };
+          acc[item.id] = { id: item.id, nombre: item.nombre, descripion: item.descripcion};
           return acc;
         }, {});
         this.data = data;
@@ -59,7 +59,7 @@ export class CareerItemComponent {
       this.http.get<any[]>(Host.host + '/programas')
       .subscribe((data: any[]) =>{
         this.transformedData = data.reduce((acc, item) => {
-          acc[item.id] = { id: item.id, nombre: item.nombre };
+          acc[item.id] = { id: item.id, nombre: item.nombre, descripion: item.descripcion};
           return acc;
         }, {});
         this.data = data;
@@ -86,7 +86,7 @@ export class CareerItemComponent {
       this.http.post<any[]>(Host.host + "/programas/areas?precision=" + this.slider, this.filter)
       .subscribe((data: any[]) =>{
         this.transformedData = data.reduce((acc, item) => {
-          acc[item.id] = { id: item.id, nombre: item.nombre };
+          acc[item.id] = { id: item.id, nombre: item.nombre, descripion: item.descripcion};
           return acc;
         }, {});
         this.data = data;
@@ -108,7 +108,7 @@ export class CareerItemComponent {
       this.http.get<any[]>(Host.host + '/programas' + (this.search === '' ? '': "/nombre/" + this.search) )
       .subscribe((data: any[]) =>{
         this.transformedData = data.reduce((acc, item) => {
-          acc[item.id] = { id: item.id, nombre: item.nombre };
+          acc[item.id] = { id: item.id, nombre: item.nombre, descripion: item.descripcion};
           return acc;
         }, {});
         this.data = data;

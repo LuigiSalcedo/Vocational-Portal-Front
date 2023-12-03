@@ -1,6 +1,11 @@
 <header>
     <span class="header-logo">VC</span>
     <div class="header-items">
+        @if (itemSelected == 'way-to') {
+            <a (click)='onClick("way-to")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/way-to">Encuentra tu camino</a>
+        } @else {
+            <a (click)='onClick("way-to")' routerLink="/way-to">Encuentra tu camino</a>
+        }
         @if (itemSelected == 'carreras') {
             <a (click)='onClick("carreras")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/careers" routerLinkActive="active" ariaCurrentWhenActive="page">Carreras</a>
         } @else {
@@ -10,11 +15,6 @@
             <a (click)='onClick("universidades")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/universidades">Universidades</a>
         } @else {
             <a (click)='onClick("universidades")' routerLink="/universidades">Universidades</a>
-        }
-        @if (itemSelected == 'proyeccion') {
-            <a (click)='onClick("proyeccion")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/proyeccion">Proyeccion</a>
-        } @else {
-            <a (click)='onClick("proyeccion")' routerLink="/proyeccion">Proyeccion</a>
         }
         
     </div>
