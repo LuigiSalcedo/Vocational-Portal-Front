@@ -8,16 +8,12 @@
     </ng-container>
     <ng-container *ngIf="load">
         <ng-container *ngFor="let elemento of elementos; let i = index">
-            <div id="circle" class="circle">
-                <span>
-                    {{send}}
-                </span></div>
-            <div id="circle-invisible" class="circle-invisible"></div>
-            <div (click)="startAnimation(elemento.element_id)" class="elemento" id="{{elemento.element_id}}"
-                [style.transform]="'translate(' + elemento.left + 'px, ' + elemento.top + 'px)'"
-                [style.transition]="transicionActivada ? 'transform 0.5s cubic-bezier(0.6,-0.28, 0.72, 0.54) !important' : 'none'">
+            <div (click)="startAnimation(elemento.element_id)" class="elemento" id="{{elemento.element_id}}">
                 <span>{{data[i].nombre | lowercase}}</span>
             </div>
         </ng-container>
     </ng-container>
 </section>
+<span>
+    {{send}}
+</span>

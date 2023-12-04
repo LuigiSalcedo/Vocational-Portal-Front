@@ -14,7 +14,7 @@ export class HomeComponent {
 
   http = inject(HttpClient);
 
-  constructor(private router: Router) {}
+  constructor(private router:  Router) {}
 
   data: any[] = []
 
