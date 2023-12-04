@@ -1,0 +1,199 @@
+section {
+
+  user-select: none;
+
+  box-sizing: border-box;
+
+  display: block;
+  position: relative;
+
+  width: 100%;
+  height: 400px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  margin-top: 20px;
+
+  overflow: hidden;
+
+}
+
+
+.circle {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 7%;
+  background-color: #69426D;
+  box-shadow: 10px #9c70a1;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color 1s ease-out;
+}
+
+.circle-invisible {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  z-index: -3;
+}
+
+.elemento {
+  position: absolute;
+
+  height: 25px;
+  background-color: rgb(245, 245, 245);
+  padding: 5px;
+  color: #312E2E;
+  border-radius: 3px;
+
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+
+  transition: background-color 0.3s ease;
+
+  /* animation: ilumnate 1s ease-in-out normal forwards infinite; */
+
+  /* transition: transform 0.5s cubic-bezier(0.6,-0.28, 0.72, 0.54); */
+  /* Transición suave al mover */
+}
+
+.circle:hover{
+  background-color: #8b5c91;
+}
+
+.elemento:hover{
+  background-color: rgb(245, 245, 245);
+
+}
+
+.circle span{
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;  
+  color: rgba(245, 245, 245, 0.897);
+}
+
+@keyframes destello {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Opacidad inicial del destello */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0); /* Aumenta el tamaño y disminuye la opacidad a la mitad */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Opacidad de destello de regreso al estado inicial */
+  }
+}
+
+@keyframes escalar {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    background-color: #9c70a1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    background-color: #69426D;
+  }
+}
+
+.animate-scalar {
+  animation: escalar 1s forwards;
+  z-index: 2;
+}
+
+.hide-element {
+  display: none;
+}
+
+
+
+
+
+.dot-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  min-width: 300px;
+
+  padding-top: 50px;
+
+  top: 0px;
+  left: 0;
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  /* justify-items: center; */
+  flex-direction: row;
+  row-gap: 30px;
+  column-gap: 30px;
+  z-index: 3;
+
+  backdrop-filter: blur(5px);
+}
+
+.dot {
+  animation: dot ease-in-out 1s infinite;
+  background-color: grey;
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+
+  border-radius: 4px;
+}
+
+.dot:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes dot {
+  0% {
+    background-color: grey;
+    transform: scale(1);
+  }
+
+  50% {
+    background-color: #69426D;
+    transform: scale(1.3);
+  }
+
+  100% {
+    background-color: grey;
+    transform: scale(1);
+  }
+}

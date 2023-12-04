@@ -1,14 +1,42 @@
 <main>
-    <h1>Carreras</h1>
+    <h1>CARRERAS</h1>
     <div class="search-content">
-        <input class="search" type="search" [formControl]="searchControl"> 
-        <select class="select-menu">
-            <option value="1">Programa</option>
-            <option value="2">Area</option>
-        </select>
-    </div> 
-    <div class="careers-items">
-        <app-career-item [page]="page" [filter]="filter" [search]="search" ></app-career-item>
+        <input class="search-input" type="search" [formControl]="searchControl"> 
+        <div class="select-container">
+            <select class="search-select" [(ngModel)]="selectedOption" (change)="onOptionChange($event)">
+                <option value="1">Programa</option>
+                <option value="2">Area</option>
+            </select>
+            <img class="arrow" src="./assets/img/arrow.png" alt="" srcset="">
+        </div>
+    </div>
+    <div class="items-options">
+        
+        <div class="careers-items">
+            <ng-container *ngIf="!isSelecting">
+                <div class="dot-content">
+                    <div class="dot one"></div>
+                    <div class="dot two"></div>
+                    <div class="dot tree"></div>
+                </div>
+            </ng-container>
+            <app-career-item (finishedLoadingEvent)="getFinished($event)" [page]="page" [filter]="filter" [slider]="valorSlider" [search]="search" ></app-career-item>
+        </div>
+        <div class="options" [ngClass]="{ 'show-options': selectedOption === '2' }">
+            <div class="slider">
+                <input type="range" min="1" max="100" [(ngModel)]="valorSlider" (input)="onSliderChange()">
+                <p>precision:  {{ valorSlider }}</p>
+                <div class="alert-container" *ngIf="valorSlider > 80">
+                    <h4 class="alert">Cuidado! es posible que no obtengas resultados</h4>
+                </div>
+            </div>
+            <ng-container *ngFor="let item of optionsToDisplay"> 
+                <div class="option" 
+                    (click)="optionOnClick(item.id)">
+                    <span [ngClass]="{ 'selected': ListAreas.has(item.id) }">{{item.nombre | lowercase}}</span>
+                </div>
+            </ng-container>
+        </div>
     </div>
 </main>  
 
