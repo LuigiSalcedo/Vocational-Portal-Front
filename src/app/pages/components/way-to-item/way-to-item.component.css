@@ -3,19 +3,23 @@ section {
   user-select: none;
 
   box-sizing: border-box;
-
-  display: block;
+  display: flex;
   position: relative;
 
   width: 100%;
-  height: 400px;
+  height: 200px;
 
   padding-left: 20px;
   padding-right: 20px;
 
   margin-top: 20px;
 
-  overflow: hidden;
+  row-gap: 10px;
+  column-gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
 
 }
 
@@ -53,7 +57,6 @@ section {
 }
 
 .elemento {
-  position: absolute;
 
   height: 25px;
   background-color: rgb(245, 245, 245);
@@ -74,11 +77,6 @@ section {
 
 
   transition: background-color 0.3s ease;
-
-  /* animation: ilumnate 1s ease-in-out normal forwards infinite; */
-
-  /* transition: transform 0.5s cubic-bezier(0.6,-0.28, 0.72, 0.54); */
-  /* Transición suave al mover */
 }
 
 .circle:hover{
@@ -86,7 +84,7 @@ section {
 }
 
 .elemento:hover{
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(145, 137, 137);
 
 }
 
@@ -136,7 +134,12 @@ section {
 }
 
 
-
+@media screen and (max-width: 800px) {
+  
+  section{
+    height: 400px;
+  }
+}
 
 
 .dot-content {

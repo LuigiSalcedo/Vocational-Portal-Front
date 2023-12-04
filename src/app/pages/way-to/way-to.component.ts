@@ -3,6 +3,7 @@ import { Component, ElementRef, AfterViewInit, HostListener, inject } from '@ang
 import { WayToItemComponent } from '../components/way-to-item/way-to-item.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Host } from '../../../assets/api-config.model';
+import { Router } from '@angular/router';
 
 class Posicion {
   constructor(public x: number, public y: number) {}
@@ -84,6 +85,14 @@ export class WayToComponent {
 
     this.buscarPreferencias();
 
+  }
+
+  constructor(private router: Router){
+
+  }
+
+  changeRouting(id: string){
+    this.router.navigate(['/offers', { 'id': id }]);
   }
 
   posiciones: Posicion[] = [];
