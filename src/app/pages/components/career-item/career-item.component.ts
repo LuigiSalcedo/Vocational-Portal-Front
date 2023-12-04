@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Host } from '../../../../assets/api-config.model';
 import { CommonModule, NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-career-item',
@@ -32,9 +33,13 @@ export class CareerItemComponent {
 
   keysToDisplay: any[];
 
-  constructor(){
+  constructor(private router: Router){
     this.data = [];
     this.keysToDisplay = [];
+  }
+
+  changeRouting(id: string){
+    this.router.navigate(['/offers', { 'id': id }]);
   }
 
   ngOnInit(){

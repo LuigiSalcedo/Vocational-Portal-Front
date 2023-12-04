@@ -19,7 +19,9 @@ section{
     justify-content: space-between;
 
     transition: background-color 0.2 ease-in;
+    cursor: pointer;
 
+    user-select: none;
 }
 
 .card-item:hover{

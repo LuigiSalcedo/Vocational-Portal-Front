@@ -1,0 +1,25 @@
+main{
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main div{
+
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}

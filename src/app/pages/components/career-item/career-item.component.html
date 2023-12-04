@@ -3,7 +3,7 @@
 <section>
     <ng-container *ngFor="let item of itemsToDisplay"> 
 
-        <div class="card-item">
+        <div class="card-item" (click)="changeRouting(item.id)">
             <div class="text-content">
                 <div class="text">
                     <h2>{{ item.nombre | titlecase}}</h2>
