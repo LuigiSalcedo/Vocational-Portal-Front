@@ -114,6 +114,7 @@ export class OffersComponent implements OnInit {
     this.datatodisplay = this.data.slice(startIndex, endIndex);
     return this.datatodisplay;
 
+  
   }
 
   get calculatedPage(): number {
@@ -183,26 +184,32 @@ export class OffersComponent implements OnInit {
 
     this.defaultValue = ''
 
-    const params = new HttpParams();
-    if (this.selectedOption != '-1') {
-      params.set('pais',this.selectedOption)
+    let paramss = '';
 
-      console.log('pais',this.selectedOption)
+    if (this.selectedOption != '-1') {
+      paramss+= '&pais=' + this.selectedOption
+      // console.log('pais',this.selectedOption)
     }
     if (this.selectedOptionCiudad != '-1') {
-      params.set('ciudad', this.selectedOptionCiudad)
-      console.log('ciudad',this.selectedOptionCiudad)
+      paramss+= '&ciudad=' + this.selectedOptionCiudad
+     
+      // console.log('ciudad',this.selectedOptionCiudad)
     }
     if (this.selectedOptionUniversidad != '-1') {
-      params.set('universidad', this.selectedOptionUniversidad)
-      console.log('universidad',this.selectedOptionUniversidad)
+      paramss+= '&universidad=' + this.selectedOptionUniversidad
+      // console.log('universidad',this.selectedOptionUniversidad)
     }
     if (this.selectedOptionPrograma != '-1') {
-      params.set('programa', this.selectedOptionPrograma)
-      console.log('programa',this.selectedOptionPrograma)
+      paramss+= '&programa=' + this.selectedOptionPrograma
+      // console.log('programa',this.selectedOptionPrograma)
     }
 
-    this.http.get<Oferta[]>(Host.host + '/ofertas',{ params })
+    console.log(Host.host + '/ofertas?' + paramss)
+    this.load = false;
+
+    this.defaultValue = ''
+
+    this.http.get<Oferta[]>(Host.host + '/ofertas?' + paramss)
     .subscribe((data: Oferta[]) => {
 
       this.data = data;
