@@ -78,8 +78,19 @@ export class WayToComponent {
   items_id: string[] = [];
 
   addSelection(item: any){
-    this.items.push(item.data)
-    this.items_id.push(item.data.id)
+
+    // Verificar si el elemento ya existe en el array
+    const index = this.items_id.indexOf(item.data.id);
+
+    if (index === -1) {
+      // Si no existe, agregar el elemento
+      this.items.push(item.data);
+      this.items_id.push(item.data.id);
+    } else {
+      // Si ya existe, eliminar el elemento
+      this.items.splice(index, 1);
+      this.items_id.splice(index, 1);
+    }
 
     console.log(this.items_id)
 
@@ -148,7 +159,12 @@ export class WayToComponent {
   data: any[] = []
 
   buscarPreferencias(){
-    
+
+    if(this.items_id.length == 0){
+      this.data = [];
+      return;
+    }
+
     let json = JSON.stringify(Array.from(this.items_id))
     console.log(json)
     this.http.post<any[]>(Host.host + "/programas/preferencias",json)
