@@ -1,15 +1,8 @@
 <main>
-    <h1>BUSCAR OFERTAS ACADEMICAS</h1>
+    <h1>BUSCAR UNIVERSIDADES</h1>
     <div class="input-container">
         <input class="search-input" type="search" [formControl]="searchControl" [value]="defaultValue">
         <div class="options-container">
-            <select class="search-select" [(ngModel)]="selectedOptionPrograma"
-                (change)="onOptionChangePrograma($event)">
-                <option value="-1">Programa</option>
-                <ng-container *ngFor="let option of optionsPrograma; let i = index">
-                    <option value="{{option.id}}">{{option.nombre}}</option>
-                </ng-container>
-            </select>
             <select class="search-select" [(ngModel)]="selectedOption" (change)="onOptionChangePais($event)">
                 <option value="-1">Pais</option>
                 <ng-container *ngFor="let option of optionsdis; let i = index">
@@ -22,19 +15,12 @@
                     <option value="{{option.id}}">{{option.nombre}}</option>
                 </ng-container>
             </select>
-            <select class="search-select" [(ngModel)]="selectedOptionUniversidad"
-                (change)="onOptionChangeUniversidad($event)">
-                <option value="-1">Universidad</option>
-                <ng-container *ngFor="let option of optionsUniversidad; let i = index">
-                    <option value="{{option.id}}">{{option.nombre}}</option>
-                </ng-container> 
-            </select>
             <button class="filter" (click)="filter()">
                 Filtrar
             </button>
         </div>
     </div>
-    <div class="offer-container">
+    <div class="universidad-container">
         <ng-container *ngIf="!load">
             <div class="dot-content">
                 <div class="dot one"></div>
@@ -42,16 +28,13 @@
                 <div class="dot tree"></div>
             </div>
         </ng-container>
-        <ng-container *ngFor="let offer of itemsToDisplay; let i = index">
-            <div class="offer">
-                <div class="offer-text">
-                    <h4>{{ offer.universidad.ciudad.pais.nombre }} / {{ offer.universidad.ciudad.nombre }}</h4>
-                    <h2>{{ offer.nombre | titlecase}}</h2>
-                    <h3>{{ offer.universidad.nombre }}</h3>
-                    <span>{{ offer.programa.descripcion }}</span>
-                    <h3>{{ offer.precio }}</h3>
+        <ng-container *ngFor="let universidad of itemsToDisplay; let i = index">
+            <div class="universidad">
+                <div class="universidad-text">
+                    <h4>{{ universidad.ciudad.pais.nombre }} / {{ universidad.ciudad.nombre }}</h4>
+                    <h2>{{ universidad.nombre | titlecase}}</h2>
                 </div>
-                <a href="{{offer.url}}">visitar</a>
+                <a href="{{universidad.url}}">visitar</a>
             </div>
         </ng-container>
     </div>
