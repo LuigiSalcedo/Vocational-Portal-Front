@@ -21,8 +21,8 @@
                 <span class="order">ordenado hacia la mayor preferencia</span>
             }
             <ng-container *ngFor="let item of itemsToDisplay"> 
-                <div class="card-item">
-                    <div class="text-content">
+                <div class="card-item" (click)="changeRouting(item.id)">
+                    <div class="text-content" (click)="changeRouting(item.id)">
                         <div class="text">
                             <h2>{{ item.nombre | titlecase}}</h2>
                             <div>

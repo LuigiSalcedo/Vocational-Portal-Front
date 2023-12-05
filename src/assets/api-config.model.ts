@@ -6,6 +6,8 @@ export class Host {
 export interface Oferta{
    id: number;
    nombre: string;
+   precio: string;
+   url: string;
    programa: {
      id: number;
      nombre: string;
@@ -25,3 +27,17 @@ export interface Oferta{
      url: string;
    };
  }
+
+ export interface Universidad{
+    id: number;
+    nombre: string;
+    ciudad: {
+      id: number;
+      nombre: string;
+      pais: {
+        id: number;
+        nombre: string;
+      };
+    };
+    url: string;
+}

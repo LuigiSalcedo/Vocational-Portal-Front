@@ -1,19 +1,20 @@
-import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Host, Oferta } from '../../../assets/api-config.model';
-import { CommonModule, NgFor } from '@angular/common';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Host, Universidad } from '../../../assets/api-config.model';
+import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { debounceTime } from 'rxjs/operators';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { NgFor, CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-offers',
+  selector: 'app-uni',
   standalone: true,
   imports: [HttpClientModule, NgFor, CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './offers.component.html',
-  styleUrl: './offers.component.css'
+  templateUrl: './uni.component.html',
+  styleUrl: './uni.component.css'
 })
-export class OffersComponent implements OnInit {
+
+export class UniComponent implements OnInit{
 
   http = inject(HttpClient);
 
@@ -24,7 +25,7 @@ export class OffersComponent implements OnInit {
   searchControl = new FormControl('');
   defaultValue = '';
 
-  @Input() data: Oferta[] = []
+  @Input() data: Universidad[] = []
 
   search = '';
   load = false;
@@ -35,36 +36,18 @@ export class OffersComponent implements OnInit {
 
     this.http.get<any[]>(Host.host + '/paises')
       .subscribe((data: any[]) => {
-
+        console.log('paises')
         this.optionsdis = data;
-      });
-
-    this.http.get<any[]>(Host.host + '/programas')
-      .subscribe((data: any[]) => {
-
-        this.optionsPrograma = data;
-
       });
 
     this.http.get<any[]>(Host.host + '/ciudades')
       .subscribe((data: any[]) => {
-
         this.optionsdCiudad = data;
-      });
-
-    this.http.get<any[]>(Host.host + '/universidades')
-      .subscribe((data: any[]) => {
-
-        this.optionsUniversidad = data;
-
       });
 
     this.searchControl.valueChanges
       .subscribe(query => {
         this.load = false;
-
-
-
       })
 
     this.searchControl.valueChanges
@@ -75,8 +58,8 @@ export class OffersComponent implements OnInit {
 
         this.search = !query ? '' : "/nombre/" + query;
 
-        this.http.get<Oferta[]>(Host.host + '/ofertas' + this.search)
-          .subscribe((data: Oferta[]) => {
+        this.http.get<Universidad[]>(Host.host + '/universidades' + this.search)
+          .subscribe((data: Universidad[]) => {
 
             this.load = true;
             this.data = data;
@@ -96,8 +79,8 @@ export class OffersComponent implements OnInit {
         const params = new HttpParams()
           .set('programa', idElemento)
 
-        this.http.get<Oferta[]>(Host.host + '/ofertas', { params })
-          .subscribe((data: Oferta[]) => {
+        this.http.get<Universidad[]>(Host.host + '/Universidads', { params })
+          .subscribe((data: Universidad[]) => {
 
             this.data = data;
             this.load = true;
@@ -118,9 +101,9 @@ export class OffersComponent implements OnInit {
   page = 1;
   limit_pages = 10;
 
-  datatodisplay: Oferta[] = []
+  datatodisplay: Universidad[] = []
 
-  get itemsToDisplay(): Oferta[] | any {
+  get itemsToDisplay(): Universidad[] | any {
 
     const startIndex = (this.page - 1) * this.limit_pages;
 
@@ -229,22 +212,14 @@ export class OffersComponent implements OnInit {
 
       // console.log('ciudad',this.selectedOptionCiudad)
     }
-    if (this.selectedOptionUniversidad != '-1') {
-      paramss += '&universidad=' + this.selectedOptionUniversidad
-      // console.log('universidad',this.selectedOptionUniversidad)
-    }
-    if (this.selectedOptionPrograma != '-1') {
-      paramss += '&programa=' + this.selectedOptionPrograma
-      // console.log('programa',this.selectedOptionPrograma)
-    }
 
-    console.log(Host.host + '/ofertas?' + paramss)
+    console.log(Host.host + '/universidades?' + paramss)
     this.load = false;
 
     this.defaultValue = ''
 
-    this.http.get<Oferta[]>(Host.host + '/ofertas?' + paramss)
-      .subscribe((data: Oferta[]) => {
+    this.http.get<Universidad[]>(Host.host + '/universidades?' + paramss)
+      .subscribe((data: Universidad[]) => {
 
         this.data = data;
         this.load = true;

@@ -138,6 +138,9 @@ section h3{
   flex-direction: column;
   padding: 5px;
   border-left: solid 4px #69426D ;
+  cursor: pointer;
+
+  z-index: 3;
 
   transition: all 0.5s ease-in-out;
 }

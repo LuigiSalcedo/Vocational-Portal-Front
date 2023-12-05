@@ -129,11 +129,6 @@ section {
   z-index: 2;
 }
 
-.hide-element {
-  display: none;
-}
-
-
 @media screen and (max-width: 800px) {
   
   section{
@@ -199,4 +194,9 @@ section {
     background-color: grey;
     transform: scale(1);
   }
+}
+
+.hover-element {
+  background-color: #69426D !important;
+  color: whitesmoke
 }

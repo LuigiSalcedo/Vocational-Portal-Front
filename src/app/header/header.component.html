@@ -11,12 +11,16 @@
         } @else {
             <a (click)='onClick("carreras")' routerLink="/careers" routerLinkActive="active" ariaCurrentWhenActive="page">Carreras</a>
         }
-        @if (itemSelected == 'universidades') {
-            <a (click)='onClick("universidades")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/universidades">Ofertas</a>
+        @if (itemSelected == 'offers') {
+            <a (click)='onClick("offers")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/offers">Ofertas</a>
         } @else {
-            <a (click)='onClick("universidades")' routerLink="/offers">Ofertas</a>
+            <a (click)='onClick("offers")' routerLink="/offers">Ofertas</a>
         }
-        
+        @if (itemSelected == 'universidades') {
+            <a (click)='onClick("universidades")' style="background-color: #69426D !important; border-radius: 0 !important;" routerLink="/universidades">Universidades</a>
+        } @else {
+            <a (click)='onClick("universidades")' routerLink="/universidades">Universidades</a>
+        }
     </div>
     <div class="help"></div>
 </header>

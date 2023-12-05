@@ -61,8 +61,14 @@ export class WayToItemComponent implements OnInit {
     this.addSelection('' + id);
 
     if (elemento) {
-      elemento.classList.add('hide-element');
-
+      console.log(elemento.classList.contains('hover-element'))
+      if (elemento.classList.contains('hover-element')) {
+        // Si ya tiene la clase 'hover-element', quitarla para revertir el efecto de hover
+        elemento.classList.remove('hover-element');
+      } else {
+        // Si no tiene la clase 'hover-element', agregarla para aplicar el efecto de hover
+        elemento.classList.add('hover-element');
+      }
     }
   }
 
